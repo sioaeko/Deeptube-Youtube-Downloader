@@ -10,7 +10,7 @@ Simple Video/Audio file downloader for Youtube
 
 ![logo](https://github.com/59rice/Deeptube/assets/101755125/0699285f-b01b-45da-9e13-a57f54381e3f)
 
-> This program Bulit for download youtube video/audio file as simple
+> This program supported Apple Slicon MacOS / AMD64 Windows 10~11
 
 > We Used webbroswer / sys / PyQt6 / yt_dlp modules
 
