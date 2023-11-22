@@ -43,7 +43,8 @@ With ffmpeg, we can quickly combine the videos and serve them to you, so you don
 
 # 3. Unlimited Download Video 
 
-<img width="411" alt="Screenshot 2023-11-23 at 3 01 58 AM" src="https://github.com/59rice/Deeptube/assets/101755125/396847be-f626-4f6c-8bc9-c675963f72e5">
+<img width="447" alt="Screenshot 2023-11-23 at 3 14 40 AM" src="https://github.com/59rice/Deeptube/assets/101755125/dddd1207-6999-4719-a8b2-40470db393fd">
+
 
 > Since we're an open-source program, we use the
 There is no limit to the number of downloads, you can get as many as you want.
