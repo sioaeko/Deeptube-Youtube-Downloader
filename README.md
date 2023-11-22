@@ -49,6 +49,16 @@ With ffmpeg, we can quickly combine the videos and serve them to you, so you don
 
 <img width="447" alt="Screenshot 2023-11-23 at 3 14 40 AM" src="https://github.com/59rice/Deeptube/assets/101755125/dddd1207-6999-4719-a8b2-40470db393fd">
 
-
 > Since we're an open-source program, we use the
 There is no limit to the number of downloads, you can get as many as you want.
+
+
+# 4. Supports multiple platforms
+
+<img width="200" src="https://github.com/59rice/Deeptube/assets/101755125/88c98b87-bb87-4a3a-9f93-15b414716918">
+
+> Enable broad compatibility by adding support for AMD64 processors, the majority of which are currently used on desktops, starting with Apple's ARM processors.
+
+
+
+
