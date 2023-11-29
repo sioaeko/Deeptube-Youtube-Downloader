@@ -258,7 +258,6 @@ class YoutubeDownloader(QMainWindow):
     def handle_icon_button(self):
         webbrowser.open("https://github.com/59rice/Deeptube")
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     ex = YoutubeDownloader()
