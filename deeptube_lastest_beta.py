@@ -31,8 +31,11 @@ class YoutubeDownloader(QMainWindow):
         self.set_ffmpeg_path()
 
     def set_ffmpeg_path(self):
-        ffmpeg_path = os.path.join(os.path.dirname(__file__), "ffmpeg.exe")
-        os.environ["PATH"] += os.pathsep + ffmpeg_path
+        ffmpeg_path = 'ffmpeg'
+        if sys.platform == "win32":
+            ffmpeg_path += ".exe"
+        ffmpeg_path = os.path.join(os.path.dirname(__file__), ffmpeg_path)
+        os.environ["PATH"] += os.pathsep + os.path.dirname(ffmpeg_path)
 
     def init_ui(self):
         self.setWindowTitle("DeepTube :: Unofficial YouTube Downloader")
@@ -187,7 +190,7 @@ class YoutubeDownloader(QMainWindow):
             "outtmpl": save_path,
             "merge_output_format": video_format,
             "progress_hooks": [self.update_progress],
-            "ffmpeg_location": os.path.join(os.path.dirname(sys.executable), "ffmpeg"),
+            "ffmpeg_location": 'ffmpeg',
         }
 
         self.progress_bar.setVisible(True)
@@ -213,7 +216,7 @@ class YoutubeDownloader(QMainWindow):
             "format": f"bestaudio/best[ext={audio_format}]",
             "outtmpl": save_path,
             "progress_hooks": [self.update_progress],
-            "ffmpeg_location": os.path.join(os.path.dirname(sys.executable), "ffmpeg"),
+            "ffmpeg_location": 'ffmpeg',
         }
 
         self.progress_bar.setVisible(True)
