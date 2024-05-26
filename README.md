@@ -60,5 +60,10 @@ There is no limit to the number of downloads, you can get as many as you want.
 > Enable broad compatibility by adding support for AMD64 processors, the majority of which are currently used on desktops, starting with Apple's ARM processors.
 
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=sioaeko/Deeptube-Youtube-Downloader&type=Timeline)](https://star-history.com/#sioaeko/Deeptube-Youtube-Downloader&Timeline)
+
+
 
 
