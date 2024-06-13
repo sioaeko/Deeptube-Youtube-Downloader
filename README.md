@@ -1,5 +1,5 @@
 # deeptube :: Unofficial Youtube Downloader
-### Simple Video/Audio file downloader for Youtube(간단한 유튜브 영상/오디오 다운로더)
+### Simple Video/Audio file downloader for Youtube
 
 
 ![GitHub](https://img.shields.io/github/license/sioaeko/DeepTube-Youtube-Downloader)
