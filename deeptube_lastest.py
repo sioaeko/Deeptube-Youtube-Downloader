@@ -254,7 +254,7 @@ class YoutubeDownloader(QMainWindow):
             QMessageBox.critical(self, "Error", f"An error occurred: {status}")
 
     def handle_icon_button(self):
-        webbrowser.open("https://github.com/59rice/Deeptube")
+        webbrowser.open("https://github.com/Sioaeko/Deeptube")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
