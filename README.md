@@ -1,6 +1,12 @@
 # deeptube :: Unofficial Youtube Downloader
 ### Simple Video/Audio file downloader for Youtube(간단한 유튜브 영상/오디오 다운로더)
 
+
+![GitHub](https://img.shields.io/github/license/sioaeko/DeepTube-Youtube-Downloader)
+![GitHub stars](https://img.shields.io/github/stars/sioaeko/DeepTube-Youtube-Downloader)
+![GitHub forks](https://img.shields.io/github/forks/sioaeko/DeepTube-Youtube-Downloader)
+
+
 <img width="200" src="https://github.com/59rice/Deeptube/assets/101755125/25909530-073d-435b-ab41-69781298e77f">
 
 
@@ -16,6 +22,24 @@
 
 ----------------------------------------------
 
+## Features
+
+- Download videos in multiple qualities (360p, 480p, 720p, 1080p, 1440p, 2160p, best, worst).
+- Download audio in various formats (aac, flac, mp3, m4a, opus, vorbis, wav).
+- Support for multiple video formats (mp4, mkv, webm).
+- Simple and intuitive user interface.
+- Progress bar to track download status.
+
+-------------------------------------------------
+
+## Requirements
+
+- Python 3.6+
+- PyQt6
+- yt-dlp
+- ffmpeg
+
+---------------------------------------------------
 
 
 # 1. Intuitive user interface
@@ -59,6 +83,85 @@ There is no limit to the number of downloads, you can get as many as you want.
 
 > Enable broad compatibility by adding support for AMD64 processors, the majority of which are currently used on desktops, starting with Apple's ARM processors.
 
+
+-------------------------------------------
+
+
+## Installation
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/DeepTube.git
+    cd DeepTube
+    ```
+
+2. **Install the required Python packages:**
+    ```bash
+    pip3 install -r requirements.txt
+    ```
+
+3. **Ensure ffmpeg is installed and available in your PATH:**
+    - On Ubuntu:
+        ```bash
+        sudo apt update
+        sudo apt install ffmpeg
+        ```
+    - On Windows:
+        - Download `ffmpeg` from [FFmpeg](https://ffmpeg.org/download.html) and add it to your system PATH.
+
+## Usage
+
+1. **Run the application:**
+    ```bash
+    python3 deeptube_latest.py
+    ```
+
+2. **Use the UI to enter the YouTube URL, select the desired quality and format, and specify the download location.**
+
+## Building Executable
+
+To build a standalone executable of DeepTube, follow these steps:
+
+1. **Install PyInstaller:**
+    ```bash
+    pip3 install pyinstaller
+    ```
+
+2. **Generate the spec file and modify it to include additional files:**
+    ```bash
+    pyinstaller --name=DeepTube --onefile --windowed deeptube_latest.py
+    ```
+
+3. **Modify the generated `DeepTube.spec` file to include your resource files (logo, ffmpeg, etc.).**
+
+4. **Build the executable:**
+    ```bash
+    pyinstaller DeepTube.spec
+    ```
+
+5. **Find the executable in the `dist` directory.**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+## Acknowledgements
+
+- [PyQt6](https://riverbankcomputing.com/software/pyqt/intro)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [FFmpeg](https://ffmpeg.org/)
+
+## Contact
+
+If you have any questions or suggestions, please open an issue or reach out to me at [asanaridev@proton.me].
 
 ## Star History
 
