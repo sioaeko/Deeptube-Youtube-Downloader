@@ -1,24 +1,13 @@
 # deeptube :: Unofficial Youtube Downloader
-### Simple Video/Audio file downloader for Youtube
 
+<img width="500" src="https://github.com/59rice/Deeptube/assets/101755125/0699285f-b01b-45da-9e13-a57f54381e3f">
+
+### Simple Video/Audio file downloader for Youtube
 
 ![GitHub](https://img.shields.io/github/license/sioaeko/DeepTube-Youtube-Downloader)
 ![GitHub stars](https://img.shields.io/github/stars/sioaeko/DeepTube-Youtube-Downloader)
 ![GitHub forks](https://img.shields.io/github/forks/sioaeko/DeepTube-Youtube-Downloader)
 
-
-<img width="200" src="https://github.com/59rice/Deeptube/assets/101755125/25909530-073d-435b-ab41-69781298e77f">
-
-
-
-⚠ Notice!
-> Please note that using these libraries to download videos from YouTube may violate YouTube's Terms of Service, so use them responsibly.
-
-![logo](https://github.com/59rice/Deeptube/assets/101755125/0699285f-b01b-45da-9e13-a57f54381e3f)
-
-> This program supported Apple Slicon MacOS / AMD64 Windows 10~11
-
-> We Used webbroswer / sys / PyQt6 / yt_dlp modules
 
 ----------------------------------------------
 
@@ -31,6 +20,10 @@
 - Progress bar to track download status.
 
 -------------------------------------------------
+
+## ⚠ Notice!
+
+- Please note that using these libraries to download videos from YouTube may violate YouTube's Terms of Service, so use them responsibly.
 
 ## Requirements
 
@@ -82,6 +75,10 @@ There is no limit to the number of downloads, you can get as many as you want.
 <img width="200" src="https://github.com/59rice/Deeptube/assets/101755125/88c98b87-bb87-4a3a-9f93-15b414716918">
 
 > Enable broad compatibility by adding support for AMD64 processors, the majority of which are currently used on desktops, starting with Apple's ARM processors.
+
+# 5. Cool program icon
+
+<img width="150" src="https://github.com/59rice/Deeptube/assets/101755125/25909530-073d-435b-ab41-69781298e77f">
 
 
 -------------------------------------------
