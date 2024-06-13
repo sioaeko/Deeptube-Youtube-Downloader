@@ -20,6 +20,25 @@ from yt_dlp import YoutubeDL
 from yt_dlp.utils import DownloadError
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 
+class DownloadThread(QThread):
+    progress_updated = pyqtSignal(float)
+    download_finished = pyqtSignal(str)
+
+    def __init__(self, ydl_opts, url):
+        super().__init__()
+        self.ydl_opts = ydl_opts
+        self.url = url
+
+    def run(self):
+        try:
+            with YoutubeDL(self.ydl_opts) as ydl:
+                ydl.download([self.url])
+            self.download_finished.emit("success")
+        except DownloadError as e:
+            self.download_finished.emit(f"error: {str(e)}")
+        except Exception as e:
+            self.download_finished.emit(f"error: {str(e)}")
+
 class YoutubeDownloader(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -30,6 +49,9 @@ class YoutubeDownloader(QMainWindow):
         # Set the path to ffmpeg
         self.set_ffmpeg_path()
 
+        # Initialize download thread
+        self.download_thread = None
+
     def set_ffmpeg_path(self):
         ffmpeg_path = 'ffmpeg'
         if sys.platform == "win32":
@@ -39,7 +61,7 @@ class YoutubeDownloader(QMainWindow):
 
     def init_ui(self):
         self.setWindowTitle("DeepTube :: Unofficial YouTube Downloader")
-        self.setGeometry(300, 300, 400, 300)  # Adjusted height
+        self.setGeometry(300, 300, 400, 400)  # Adjusted height
 
         # Main widget and layout setup
         self.main_widget = QWidget(self)
@@ -127,7 +149,7 @@ class YoutubeDownloader(QMainWindow):
         self.main_layout.addSpacing(10)
 
         self.show()
-        
+
     def img_resouce_path(self, relative_path):
         try:
             base_path = sys._MEIPASS
@@ -160,10 +182,11 @@ class YoutubeDownloader(QMainWindow):
         video_quality = self.quality_input.currentText()
         audio_format = self.audio_format_input.currentText()
 
-        # 파일 저장 경로 대화상자 표시
-        save_path = QFileDialog.getExistingDirectory(self, "Select Download Folder")
-        if save_path:
-            save_file = os.path.join(save_path, "downloaded_video")
+        # Display the file save dialog
+        save_file, _ = QFileDialog.getSaveFileName(
+            self, "Select Download File", "", "All Files (*)"
+        )
+        if save_file:
             if self.audio_radio.isChecked():
                 self.download_audio(video_url, audio_format, save_file)
 
@@ -175,7 +198,6 @@ class YoutubeDownloader(QMainWindow):
             )
 
     def download_video(self, video_url, video_quality, save_path):
-        # ‘best’로 선택되었을 경우에 적절한 처리
         quality = (
             f"{video_quality}p"
             if video_quality != "best" and not video_quality.endswith("p")
@@ -195,19 +217,11 @@ class YoutubeDownloader(QMainWindow):
 
         self.progress_bar.setVisible(True)
         self.progress_bar.setValue(0)
-        try:
-            with YoutubeDL(ydl_opts) as ydl:
-                ydl.download([video_url])
-            QMessageBox.information(self, "Success", "The video download is complete.")
-        except DownloadError as e:
-            QMessageBox.critical(
-                self, "Error", "There was an error downloading the video.\n" + str(e)
-            )
-        except Exception as e:
-            QMessageBox.critical(
-                self, "Error", "An unexpected error occurred.\n" + str(e)
-            )
-        self.progress_bar.setVisible(False)
+        
+        self.download_thread = DownloadThread(ydl_opts, video_url)
+        self.download_thread.progress_updated.connect(self.update_progress)
+        self.download_thread.download_finished.connect(self.handle_download_finished)
+        self.download_thread.start()
 
     def download_audio(self, video_url, audio_format, save_path):
         save_path += f".{audio_format}"  # Add the extension to the save path
@@ -221,24 +235,23 @@ class YoutubeDownloader(QMainWindow):
 
         self.progress_bar.setVisible(True)
         self.progress_bar.setValue(0)
-        try:
-            with YoutubeDL(ydl_opts) as ydl:
-                ydl.download([video_url])
-            QMessageBox.information(self, "Success", "The audio download is complete.")
-        except DownloadError as e:
-            QMessageBox.critical(
-                self, "Error", "There was an error downloading audio.\n" + str(e)
-            )
-        except Exception as e:
-            QMessageBox.critical(
-                self, "Error", "An unexpected error occurred.\n" + str(e)
-            )
-        self.progress_bar.setVisible(False)
+        
+        self.download_thread = DownloadThread(ydl_opts, video_url)
+        self.download_thread.progress_updated.connect(self.update_progress)
+        self.download_thread.download_finished.connect(self.handle_download_finished)
+        self.download_thread.start()
 
     def update_progress(self, d):
         if d['status'] == 'downloading':
             percent = d['_percent_str']
             self.progress_bar.setValue(float(percent.strip('%')))
+
+    def handle_download_finished(self, status):
+        self.progress_bar.setVisible(False)
+        if status == "success":
+            QMessageBox.information(self, "Success", "The download is complete.")
+        else:
+            QMessageBox.critical(self, "Error", f"An error occurred: {status}")
 
     def handle_icon_button(self):
         webbrowser.open("https://github.com/59rice/Deeptube")
