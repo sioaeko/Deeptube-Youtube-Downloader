@@ -1,15 +1,15 @@
-# deeptube :: Unofficial Youtube Downloader
+<p align="center">
+<img width="128" src="https://github.com/59rice/Deeptube/assets/101755125/25909530-073d-435b-ab41-69781298e77f">
+<h1 align="center">deeptube :: Unofficial Youtube Downloader</h1>
+</p>
 
-<img width="500" src="https://github.com/59rice/Deeptube/assets/101755125/0699285f-b01b-45da-9e13-a57f54381e3f">
+<div align="center">
+    
+ ![GitHub](https://img.shields.io/github/license/sioaeko/DeepTube-Youtube-Downloader)
+ ![GitHub stars](https://img.shields.io/github/stars/sioaeko/DeepTube-Youtube-Downloader)
+ ![GitHub forks](https://img.shields.io/github/forks/sioaeko/DeepTube-Youtube-Downloader)
 
-### Simple Video/Audio file downloader for Youtube
-
-![GitHub](https://img.shields.io/github/license/sioaeko/DeepTube-Youtube-Downloader)
-![GitHub stars](https://img.shields.io/github/stars/sioaeko/DeepTube-Youtube-Downloader)
-![GitHub forks](https://img.shields.io/github/forks/sioaeko/DeepTube-Youtube-Downloader)
-
-
-----------------------------------------------
+</div>
 
 ## Features
 
@@ -18,8 +18,6 @@
 - Support for multiple video formats (mp4, mkv, webm).
 - Simple and intuitive user interface.
 - Progress bar to track download status.
-
--------------------------------------------------
 
 ## ⚠ Notice!
 
@@ -32,7 +30,7 @@
 - yt-dlp
 - ffmpeg
 
----------------------------------------------------
+
 
 
 # 1. Intuitive user interface
@@ -76,12 +74,6 @@ There is no limit to the number of downloads, you can get as many as you want.
 
 > Enable broad compatibility by adding support for AMD64 processors, the majority of which are currently used on desktops, starting with Apple's ARM processors.
 
-# 5. Cool program icon
-
-<img width="150" src="https://github.com/59rice/Deeptube/assets/101755125/25909530-073d-435b-ab41-69781298e77f">
-
-
--------------------------------------------
 
 
 ## Installation
