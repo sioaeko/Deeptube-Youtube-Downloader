@@ -1,6 +1,6 @@
 <p align="center">
 <img width="128" src="https://github.com/59rice/Deeptube/assets/101755125/25909530-073d-435b-ab41-69781298e77f">
-<h1 align="center">deeptube :: Unofficial Youtube Downloader</h1>
+<h1 align="center">Deeptube Youtube Downloader</h1>
 </p>
 
 <div align="center">
